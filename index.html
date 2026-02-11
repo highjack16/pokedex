@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Gotta Catch 'Em All!</title>
+    <meta name="description" content="A modern, interactive Pokédex featuring all your favorite Pokémon with detailed stats and information.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="pokeball-icon">⚪</span>
+                    Pokédex
+                </h1>
+                <p class="subtitle">Discover and explore the world of Pokémon</p>
+            </div>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Search Pokémon by name or number..."
+                    autocomplete="off"
+                >
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="filter-container">
+                <button class="filter-btn active" data-type="all">All</button>
+                <button class="filter-btn" data-type="fire">🔥 Fire</button>
+                <button class="filter-btn" data-type="water">💧 Water</button>
+                <button class="filter-btn" data-type="grass">🌿 Grass</button>
+                <button class="filter-btn" data-type="electric">⚡ Electric</button>
+                <button class="filter-btn" data-type="psychic">🔮 Psychic</button>
+            </div>
+        </header>
+
+        <div class="loading" id="loading">
+            <div class="pokeball-loader"></div>
+            <p>Loading Pokémon...</p>
+        </div>
+
+        <main class="pokemon-grid" id="pokemonGrid"></main>
+
+        <div class="load-more-container" id="loadMoreContainer">
+            <button class="load-more-btn" id="loadMoreBtn">Load More Pokémon</button>
+        </div>
+    </div>
+
+    <!-- Modal for Pokemon Details -->
+    <div class="modal" id="pokemonModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
